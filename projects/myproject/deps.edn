@@ -1,0 +1,7 @@
+{:deps {org.clojure/clojure {:mvn/version "1.12.0"}
+
+        base/mybase {:local/root "../../bases/mybase"}}
+
+ :aliases {:test {:extra-paths []
+                  :extra-deps  {}}}}
+

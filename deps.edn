@@ -1,9 +1,17 @@
 {:aliases  {:dev {:extra-paths ["development/src"]
 
-                  :extra-deps {org.clojure/clojure {:mvn/version "1.11.1"}}}
+                  :extra-deps {org.clojure/clojure {:mvn/version "1.11.1"}
 
-            :test {:extra-paths []}
+                               base/mybase {:local/root "bases/mybase"}}}
 
-            :poly {:main-opts ["-m" "polylith.clj.core.poly-cli.core"]
-                   :extra-deps {polylith/clj-poly {:mvn/version "0.2.21"}}}}}
+            :test {:extra-paths ["bases/mybase/test"]}
+
+            :poly
+            {:extra-deps
+             {polylith/clj-poly
+              {:deps/root "projects/poly"
+               :git/url "https://github.com/polyfy/polylith.git"
+               ;; This is the last SHA from the cljs support branch https://github.com/polyfy/polylith/pull/524
+               :sha "7d8f41cc8c87a4d4635a0189856227d98787d188"}}
+             :main-opts ["-m" "polylith.clj.core.poly-cli.core"]} }}
 

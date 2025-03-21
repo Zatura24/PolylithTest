@@ -1,4 +1,5 @@
 {:top-namespace "com.avisi.apps"
+ :dialects #{"clj" "cljs"}
  :interface-ns "interface"
  :default-profile-name "default"
  :compact-views #{}
@@ -6,5 +7,6 @@
        :auto-add false}
  :tag-patterns {:stable "stable-*"
                 :release "v[0-9]*"}
- :projects {"development" {:alias "dev"}}}
+ :projects {"development" {:alias "dev"}
+            "myproject" {:alias "mp"}}}
 
